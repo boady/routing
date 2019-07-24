@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom'
 
 function Nav() {
 
-  const style = {
+  const navStyle = {
     color: 'white'
   }
   return (
     <nav>
     <h3>Logo</h3>
     <ul className = "nav-links">
-    <Link to='/About'>
+    <Link style={navStyle} to='/About'>
     <li>About</li>
     </Link>
-    <Link to ='/Shop'>
+    <Link style={navStyle} to ='/Shop'>
     <li>Shop</li>
     </Link>
     </ul>
