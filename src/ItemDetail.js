@@ -9,7 +9,10 @@ function ItemDetail({ match }) {
     console.log(match);
   },[]);
 
-  const[item, setItem] = useState({});
+  const[item, setItem] = useState({
+    images:{},
+    ratings:{},
+  });
 
   const fetchItem = async () => {
     const fetchItem = await fetch(`https://fortnite-public-api.theapinetwork.com/prod09/item/get?ids=${match.params.id}`)
@@ -22,6 +25,8 @@ function ItemDetail({ match }) {
   return (
     <div>
     <h1>{item.name}</h1>
+    <h1>Rating {item.ratings.avgStars}</h1>
+    <img src={item.images.transparent} alt=""/>
     </div>
   );
 }
